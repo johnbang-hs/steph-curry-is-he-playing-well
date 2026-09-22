@@ -1,18 +1,23 @@
-# Stephen Curry season dashboard
+# Still cooking — Stephen Curry career lab
 
-Open index.html in your browser. Internet access is needed to load D3.
-The three charts show 3P%, points per game, and eFG% from the supplied CSV.
-Career totals are excluded. The 2019-20 season includes only 5 games.
-Data is embedded in index.html; editing curry.csv alone does not update the charts.
+Static, dependency-free career dashboard with linked season selection, three-point volume/accuracy scatterplot, scoring composition, age curve (per game or per 36 minutes), and season comparisons.
+
+Open `index.html`, or serve this directory with `python3 -m http.server 8765`.
+
+## Data
+
+`curry.csv` is the supplied Basketball Reference per-game export. `data.js` contains its 17 season rows (career aggregate excluded). The CSV has an extra quoted wrapper around each row; parse that wrapper before parsing the comma-separated fields. Update both files when refreshing the data.
+
+Basketball Reference profile checked September 22, 2026: https://www.basketball-reference.com/players/c/curryst01.html
+
+- Regular season only; static snapshot, no live feed.
+- 2019–20: five games. 2011–12: 26 games.
+- Scoring composition uses rounded per-game makes × shot value, so totals can differ slightly from reported PPG.
+- Per-36 scoring uses rounded PPG × 36 / minutes per game. No pace adjustment.
+- Three-point attempt share = 3PA / FGA.
 
 ## Publish
-Copy these files into your local repository, then commit and push:
 
-    git add index.html curry.csv README.md
-    git commit -m "Add Curry season dashboard"
-    git push -u origin main
+GitHub Pages serves `main` at the repository root. Push changes to deploy.
 
-In your GitHub repository, open Settings > Pages.
-Choose Deploy from a branch, main, / (root), then Save.
-When deployment finishes, the expected URL is:
 https://johnbang-hs.github.io/steph-curry-is-he-playing-well/

@@ -11,7 +11,8 @@ Open `index.html`, or serve this directory with `python3 -m http.server 8765`.
 Basketball Reference profile checked September 22, 2026: https://www.basketball-reference.com/players/c/curryst01.html
 
 - Regular season only; static snapshot, no live feed.
-- 2019–20: five games. 2011–12: 26 games.
+- 2019–20 (five games) is retained in source data but excluded from all charts and selectors. The age curve breaks across that missing season. 2011–12: 26 games.
+- The shooting scatterplot uses unconnected dots; accuracy axis spans 36–48%.
 - Scoring composition uses rounded per-game makes × shot value, so totals can differ slightly from reported PPG.
 - Per-36 scoring uses rounded PPG × 36 / minutes per game. No pace adjustment.
 - Three-point attempt share = 3PA / FGA.
